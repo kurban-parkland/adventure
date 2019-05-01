@@ -1,5 +1,5 @@
-/// checked into github
-
+/// An 80s style adventure game 
+/// requires c++11 (-std=c++11)
 
 #include <iostream>
 #include "room.h"
@@ -29,14 +29,19 @@ int main() {
   maze.addExit( maze.getAddrByID("B133 Center"), 
                 maze.getAddrByID("B133 North"),
                 "north" );
+  /// new version
+  maze.addExitByID("B133 Center","B133 East","east");
+  maze.addExitByID("B133 East","B133 Center","west");
+  maze.addExitByID("B133 Center","B133 West","west");
+  maze.addExitByID("B133 West","B133 Center","east");
   //maze.printAllRooms();
   maze.setCurrentRoom( maze.getAddrByID("Start") );
 
   while (1)
-    {
-      maze.printCurrent();
-      maze.handleInput();
-    }
+  {
+    maze.printCurrent();
+    maze.handleInput();
+  }
   
   cout << "Program ended.  Bye." << endl;
   return 0;
