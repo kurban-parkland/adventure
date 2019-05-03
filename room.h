@@ -28,7 +28,9 @@ public:
   Room* getExit(string dir);
 
   void addThing(Thing* tptr){things_.push_back(tptr);}
-  void removeThing(Thing *tptr);
+  bool removeThing(Thing *tptr);
+
+  void look();
 
 private:
   bool visited_;

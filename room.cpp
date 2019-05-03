@@ -12,12 +12,32 @@ Room* Room::getExit(string dir)
     return nullptr;
 }
 
-void Room::removeThing(Thing* tptr)
+bool Room::removeThing(Thing* tptr)
 {
   auto pos = find(things_.begin(), things_.end(), tptr);
   if (pos == things_.end())
   {
     cout << ("can't remove " + tptr->getID()) << endl;
-    exit(1);
+    return false;
   }
+  things_.erase(pos);
+  return true;
+}
+
+void Room::look()
+{
+
+  // print exits_
+  cout << "You see the exits:" << endl;
+  for (auto exit : exits_) 
+  {
+    cout <<"- " << exit.first << endl;
+  }
+  cout << endl;
+  //print things_
+  cout << "You see:" << endl;
+  for (auto tptr : things_) 
+        cout << "- " << tptr->getID() << ' '
+             << tptr->getDesc() << endl;
+  cout << endl;
 }

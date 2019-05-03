@@ -1,0 +1,18 @@
+
+Added:
+  May 3, 2019, Ken
+  - level (keeping track of the level)
+  - score (number of rooms and number of thigns held)
+  - Thing
+  - cleaned up interface to have only strings in public methods of controller
+
+Wish list:
+  'win' condition
+  'thing in room' condition
+  'usable' things 
+  locked doors & keys
+  hidden exits
+  random rooms
+  monsters & weapons
+  web/http interface   
+  import/export xml or json maze
